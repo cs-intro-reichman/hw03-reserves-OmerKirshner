@@ -1,31 +1,31 @@
-/** String processing exercise 1. */
-public class LowerCase {
+/** String processing exercise 2. */
+public class UniqueChars {
     public static void main(String[] args) {  
         String str = args[0];
-        System.out.println(lowerCase(str));
+        System.out.println(uniqueChars(str));
     }
 
-   /**
-    * Returns a string which is identical to the original string, 
-    * except that all the upper-case letters are converted to lower-case letters.
-    * Non-letter characters are left as is.
-    */
-    public static String lowerCase(String str) {
-        int i = 0;
-        int length = str.length();
+    /**
+     * Returns a string which is identical to the original string, 
+     * except that all the duplicate characters are removed,
+     * unless they are space characters.
+     */
+    public static String uniqueChars(String str) {
         String finl = "";
-        
-        while (i < length){
-           char c = str.charAt(i);
+        int length = str.length();
 
-           if (c >= 'A' && c <= 'Z') {
-             c = (char)(c+32);
+        for (int i = 0; i < length; i++){
+         char c = str.charAt(i);
+         
+            if (i == str.indexOf(c)){
+            finl += c;
+            }
+            else if (c == ' '){
+            finl += c;
             }
 
-             finl += c; 
-             i++;
-        }
-
-        return finl ;
+           } 
+        
+        return finl;
     }
 }
