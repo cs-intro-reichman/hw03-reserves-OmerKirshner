@@ -5,24 +5,27 @@ public class LowerCase {
         System.out.println(lowerCase(str));
     }
 
-    /**
+   /**
     * Returns a string which is identical to the original string, 
     * except that all the upper-case letters are converted to lower-case letters.
     * Non-letter characters are left as is.
     */
-    public static String lowerCase(String s) {
-        StringBuilder result = new StringBuilder(); 
+    public static String lowerCase(String str) {
+        int i = 0;
+        int length = str.length();
+        String finl = "";
+        
+        while (i < length){
+           char c = str.charAt(i);
 
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i); 
-
-            if (c >= 'A' && c <= 'Z') {
-                c = (char) (c + ('a' - 'A'));
+           if (c >= 'A' && c <= 'Z') {
+             c = (char)(c+32);
             }
 
-            result.append(c);
+             finl += c; 
+             i++;
         }
 
-        return result.toString();
+        return finl ;
     }
 }
