@@ -10,17 +10,22 @@ public class UniqueChars {
      * except that all the duplicate characters are removed,
      * unless they are space characters.
      */
-    public static String uniqueChars(String s) {
-        StringBuilder result = new StringBuilder(); 
+    public static String uniqueChars(String str) {
+        String finl = "";
+        int length = str.length();
 
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i); 
-
-            if (c == ' ' || s.indexOf(c) == i) {
-                result.append(c);
+        for (int i = 0; i < length; i++){
+         char c = str.charAt(i);
+         
+            if (i == str.indexOf(c)){
+            finl += c;
             }
-        }
+            else if (c == ' '){
+            finl += c;
+            }
 
-        return result.toString();
+           } 
+        
+        return finl;
     }
 }
